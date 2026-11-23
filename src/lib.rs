@@ -56,7 +56,7 @@ impl InlineParser for LinkAttributeParser {
         }
         let attributes = parse_attributes(reader)?;
         arena[prev].attributes_mut().extend(attributes);
-        let n = arena.new_node(Text::new(text::Index::new(0, 0)));
+        let n = arena.new_node(Text::new(text::Value::Empty));
 
         let mut list_opt = ctx.get_mut(self.list);
         if list_opt.is_none() {
